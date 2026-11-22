@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indeewari Thennakoon | Power BI & Data Analytics</title>
+  <meta name="description" content="Portfolio of Indeewari Thennakoon — Industrial IT undergraduate at Uva Wellassa University, Power BI & data analytics enthusiast and software developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b0d12'/><rect x='7' y='16' width='4' height='9' rx='1' fill='%23F2C811'/><rect x='14' y='10' width='4' height='15' rx='1' fill='%23F2C811'/><rect x='21' y='6' width='4' height='19' rx='1' fill='%23F2C811'/></svg>" />
+</head>
+<body>
+  <!-- Background glow -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-bars"><i></i><i></i><i></i></span>
+      Indeewari<span class="accent">.</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#focus">What I Do</a>
+      <a href="#contact" class="btn btn-sm btn-primary">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO: the whole home screen is a live Power BI report -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="pbi reveal" id="liveDash">
+          <!-- title bar -->
+          <div class="pbi-titlebar">
+            <div class="dash-dots"><i></i><i></i><i></i></div>
+            <span class="pbi-logo"><i></i><i></i><i></i></span>
+            <span class="dash-file" id="dashFile">Sales_Performance.pbix</span>
+            <span class="pbi-author">Indeewari Thennakoon · Power BI Desktop</span>
+            <span class="live-pill"><i></i> LIVE</span>
+          </div>
+
+          <!-- formula bar -->
+          <div class="pbi-formula">
+            <span class="fx">fx</span>
+            <div class="formula-text"><code id="daxCode"></code><span class="dax-caret"></span></div>
+          </div>
+
+          <!-- report canvas -->
+          <div class="pbi-canvas">
+            <!-- Text box visual: intro -->
+            <div class="viz viz-intro">
+              <span class="viz-handle">Text box</span>
+              <span class="badge"><span class="dot"></span> Open to internship opportunities</span>
+              <h1>Hi, I'm <span class="gradient-text">Indeewari Thennakoon</span></h1>
+              <h2 class="typing-line">I'm a <span class="typed" id="typed"></span><span class="cursor">|</span></h2>
+              <p class="hero-desc">
+                Final-year <strong>Industrial Information Technology</strong> undergraduate at
+                <strong>Uva Wellassa University</strong>, passionate about <strong>Power BI</strong>,
+                data visualization and building software that turns raw data into clear insights.
+              </p>
+              <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#" class="btn btn-outline" download>Download CV</a>
+              </div>
+              <div class="socials">
+            <a href="https://github.com/Indeewari04" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/indeewari-thennakoon-656957356/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.3 21 14.7V21h-4v-5.6c0-1.34-.03-3.06-1.86-3.06-1.87 0-2.15 1.45-2.15 2.96V21H9z"/></svg>
+            </a>
+            <a href="mailto:indeewariupamalika04@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5zm2 .9v.3l8 5.3 8-5.3v-.3zm16 2.7-7.45 4.95a1 1 0 0 1-1.1 0L4 9.1V18h16z"/></svg>
+            </a>
+          </div>
+            </div>
+
+            <!-- Live visuals -->
+            <div class="viz-side">
+              <div class="dash-kpis viz-live">
+                <div class="kpi viz"><small data-kpi-label="0">Total Revenue</small><strong data-kpi-value="0">$0K</strong><em data-kpi-delta="0" class="up">▲ 0%</em></div>
+                <div class="kpi viz"><small data-kpi-label="1">Orders</small><strong data-kpi-value="1">0</strong><em data-kpi-delta="1" class="up">▲ 0%</em></div>
+                <div class="kpi viz"><small data-kpi-label="2">Profit Margin</small><strong data-kpi-value="2">0%</strong><em data-kpi-delta="2" class="up">▲ 0%</em></div>
+              </div>
+              <div class="dash-charts viz-live">
+                <div class="chart bar-chart viz">
+                  <small id="barTitle">Monthly Sales</small>
+                  <div class="bars" id="bars">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <div class="bar-tip" id="barTip">$0K</div>
+                  </div>
+                </div>
+                <div class="chart donut-chart viz">
+                  <small id="donutTitle">By Region</small>
+                  <div class="donut-wrap">
+                    <svg viewBox="0 0 42 42" class="donut">
+                      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1d212b" stroke-width="5"/>
+                      <circle class="seg" cx="21" cy="21" r="15.9" fill="none" stroke="#F2C811" stroke-width="5" stroke-dasharray="0 100"/>
+                      <circle class="seg" cx="21" cy="21" r="15.9" fill="none" stroke="#e8833a" stroke-width="5" stroke-dasharray="0 100"/>
+                      <circle class="seg" cx="21" cy="21" r="15.9" fill="none" stroke="#6b7280" stroke-width="5" stroke-dasharray="0 100"/>
+                    </svg>
+                    <b class="donut-center" id="donutCenter">0%</b>
+                  </div>
+                </div>
+              </div>
+              <div class="chart line-chart viz viz-live">
+                <small id="lineTitle">Revenue Trend</small>
+                <div class="line-wrap">
+                  <svg viewBox="0 0 300 70" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="lineFill" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#F2C811" stop-opacity=".35"/>
+                        <stop offset="100%" stop-color="#F2C811" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="area" id="lineArea" d="" fill="url(#lineFill)"/>
+                    <path class="line" id="linePath" d="" fill="none" stroke="#F2C811" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+                  </svg>
+                  <span class="line-dot" id="lineDot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- page tabs (bottom, like Power BI) -->
+          <div class="pbi-pages">
+            <div class="dash-tabs" id="dashTabs">
+              <button class="active" data-tab="0">Sales</button>
+              <button data-tab="1">Customers</button>
+              <button data-tab="2">Products</button>
+              <span class="tab-ink" id="tabInk"></span>
+            </div>
+            <span class="pbi-zoom">Page <b id="pageNo">1</b> of 3 · 100%</span>
+          </div>
+
+          <!-- fake mouse cursor -->
+          <svg class="fake-cursor" id="fakeCursor" viewBox="0 0 24 24"><path d="M4 2l16 9.5-7 1.6 4.2 7.4-2.8 1.5-4.1-7.4L5 19z" fill="#fff" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <a href="#about" class="scroll-down" aria-label="Scroll down"><span></span></a>
+    </section>
+
+<!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">01 — About Me</span>
+          <h2>Where <span class="gradient-text">data</span> meets <span class="gradient-text">code</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-photo reveal">
+            <div class="photo-frame">
+              <img src="images/profile.png" alt="Indeewari Thennakoon" />
+            </div>
+            <div class="photo-tag">
+              <strong>4th</strong>
+              <span>Year IIT<br/>Undergraduate</span>
+            </div>
+          </div>
+          <div class="about-text reveal delay-1">
+            <p>
+              I'm a 4th-year undergraduate in <strong>Industrial Information Technology</strong> at
+              <strong>Uva Wellassa University of Sri Lanka</strong>, with a strong passion for
+              <strong>Power BI</strong>, data visualization and business intelligence.
+            </p>
+            <p>
+              I enjoy cleaning messy data, building data models and designing interactive dashboards
+              that make information easy to understand. I'm currently sharpening my skills in
+              <strong>DAX</strong>, <strong>Power Query</strong> and <strong>SQL</strong>, and I also
+              build web applications, machine-learning tools and automated test suites.
+            </p>
+            <p class="fun-fact">☕ Fun fact: a well-designed dashboard makes me happier than a cup of tea.</p>
+            <div class="stats">
+              <div class="stat"><strong class="count" data-target="5">0</strong><span>Projects Built</span></div>
+              <div class="stat"><strong class="count" data-target="7">0</strong><span>Automated Test Suites</span></div>
+              <div class="stat"><strong class="count" data-target="2">0</strong><span>Team Projects</span></div>
+            </div>
+            <ul class="about-info">
+              <li><span>Location</span> Sri Lanka</li>
+              <li><span>University</span> Uva Wellassa University</li>
+              <li><span>Degree</span> BSc (Hons) in Industrial Information Technology</li>
+              <li><span>Looking for</span> Data Analytics / BI Internship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">02 — Skills</span>
+          <h2>My <span class="gradient-text">Toolkit</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+            </div>
+            <h3>Data &amp; BI</h3>
+            <p class="skill-desc">Turning raw data into interactive, decision-ready dashboards.</p>
+            <div class="chip-list">
+              <span class="hot">Power BI</span><span class="hot">DAX</span><span class="hot">Power Query</span>
+              <span>Excel</span><span>Data Modelling</span><span>Data Cleaning</span><span>Data Visualization</span>
+            </div>
+          </div>
+          <div class="skill-card reveal delay-1">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 6 2 12l6 6M16 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Databases &amp; Languages</h3>
+            <p class="skill-desc">Querying data and building applications end to end.</p>
+            <div class="chip-list">
+              <span class="hot">SQL</span><span class="hot">MySQL</span><span class="hot">Python</span>
+              <span>JavaScript</span><span>React</span><span>Node.js</span><span>Express</span><span>Java</span><span>PHP</span><span>HTML</span><span>CSS</span>
+            </div>
+          </div>
+          <div class="skill-card reveal delay-2">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.5-.6-.6-2.5z"/></svg>
+            </div>
+            <h3>Tools, ML &amp; QA</h3>
+            <p class="skill-desc">Libraries and tools I use to build, test and ship.</p>
+            <div class="chip-list">
+              <span class="hot">Playwright</span><span class="hot">scikit-learn</span><span>Streamlit</span>
+              <span>Firebase</span><span>Supabase</span><span>Vercel</span><span>Pandas</span><span>Git &amp; GitHub</span><span>VS Code</span><span>Figma</span>
+            </div>
+          </div>
+        </div>
+        <div class="tech-marquee reveal">
+          <div class="marquee-track">
+            <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Excel</span><span>SQL</span><span>MySQL</span><span>Python</span><span>scikit-learn</span><span>React</span><span>Node.js</span><span>Firebase</span><span>Supabase</span><span>PHP</span><span>JavaScript</span><span>Playwright</span><span>Git</span>
+            <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Excel</span><span>SQL</span><span>MySQL</span><span>Python</span><span>scikit-learn</span><span>React</span><span>Node.js</span><span>Firebase</span><span>Supabase</span><span>PHP</span><span>JavaScript</span><span>Playwright</span><span>Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">03 — Portfolio</span>
+          <h2>Featured <span class="gradient-text">Projects</span></h2>
+        </div>
+        <!-- ===== Team showcase projects ===== -->
+        <article class="showcase reveal">
+          <div class="gallery" data-gallery>
+            <button class="gallery-main" aria-label="Open image">
+              <img src="images/projects/monsoon-home-evening.jpg" alt="Monsoon Ridge home page, evening view" />
+              <span class="zoom">⤢</span>
+            </button>
+            <div class="gallery-thumbs">
+              <button class="active"><img src="images/projects/monsoon-home-evening.jpg" alt="Home page, evening view" /></button>
+              <button><img src="images/projects/monsoon-rooms.jpg" alt="Rooms with filters and ratings" /></button>
+              <button><img src="images/projects/monsoon-booking.jpg" alt="Booking form with exact price" /></button>
+              <button><img src="images/projects/monsoon-dash-overview.jpg" alt="Staff dashboard overview" /></button>
+              <button><img src="images/projects/monsoon-dash-reports.jpg" alt="Revenue report" /></button>
+              <button><img src="images/projects/monsoon-phones.jpg" alt="Site and dashboard on a phone" /></button>
+            </div>
+          </div>
+          <div class="showcase-body">
+            <div class="showcase-meta">
+              <span class="team-badge">👥 Team Project</span>
+            </div>
+            <h3>Monsoon Ridge · Jungle Resort &amp; Spa</h3>
+            <p>Full-stack hotel website and staff dashboard for a fictional jungle resort in Sri Lanka: online booking with live pricing, promo codes, guest reviews, invoices, emails, a front-desk dashboard, housekeeping board and revenue reports.</p>
+            <h4>My contributions</h4>
+            <ul class="contrib">
+              <li>Guest reviews: review link after check-out, star ratings on rooms and a dashboard Reviews page</li>
+              <li>Change-a-booking flow with live price preview; staff can extend a stay</li>
+              <li>Front-desk role, room numbers, housekeeping board and new login page</li>
+              <li>SEO: page titles, link previews, sitemap and hotel structured data</li>
+              <li>Security hardening: package upgrades, idle sign-out, rate limits, Dependabot</li>
+            </ul>
+            <div class="tags"><span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>Firebase</span><span>Firestore</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Sulana-UX/monsoon-ridge" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="showcase reverse reveal">
+          <div class="gallery" data-gallery>
+            <button class="gallery-main" aria-label="Open image">
+              <img src="images/projects/cineverse-home.png" alt="CINEVERSE home page" />
+              <span class="zoom">⤢</span>
+            </button>
+            <div class="gallery-thumbs">
+              <button class="active"><img src="images/projects/cineverse-home.png" alt="CINEVERSE home page" /></button>
+              <button><img src="images/projects/cineverse-now-showing.png" alt="Now Showing section" /></button>
+              <button><img src="images/projects/cineverse-seats.png" alt="Live seat selection" /></button>
+              <button><img src="images/projects/cineverse-e-ticket.png" alt="E-ticket email with QR code" /></button>
+            </div>
+          </div>
+          <div class="showcase-body">
+            <div class="showcase-meta">
+              <span class="team-badge">👥 Team Project</span>
+            </div>
+            <h3>CINEVERSE · Beyond the Screen</h3>
+            <p>Luxury cinema website with a cinematic GSAP landing page, four-step booking, a live seat map with price tiers, online payment, QR-code e-tickets and an admin dashboard for films, halls, bookings and refunds.</p>
+            <h4>My contributions</h4>
+            <ul class="contrib">
+              <li>My Bookings page and paid-booking cancellations with refunds</li>
+              <li>Door check-in by scanning the ticket QR code with a phone</li>
+              <li>Forgot-password flow with an emailed 6-digit code</li>
+              <li>Staff cancellations, per-hall seat plans and automated tests</li>
+              <li>Mobile performance fixes and Vercel deployment setup</li>
+            </ul>
+            <div class="tags"><span>React</span><span>GSAP</span><span>Express</span><span>Supabase</span><span>PostgreSQL</span><span>Vercel</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Sulana-UX/CINEVERSE" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <h3 class="sub-head reveal">More Projects</h3>
+        <div class="filters reveal">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="data">Data &amp; ML</button>
+          <button class="filter" data-filter="software">Software</button>
+          <button class="filter" data-filter="qa">QA Automation</button>
+        </div>
+        <div class="projects-grid">
+          <!-- Loan Prediction -->
+          <article class="project-card reveal" data-category="data">
+            <div class="project-thumb thumb-bi">
+              <div class="mini-dash">
+                <div class="mini-kpis"><i></i><i></i><i></i></div>
+                <div class="mini-result">
+                  <div class="mini-gauge"><b>✓</b></div>
+                  <div class="mini-lines"><i style="--w:90%"></i><i style="--w:70%"></i><i style="--w:80%"></i></div>
+                </div>
+              </div>
+              <span class="project-type">Machine Learning</span>
+            </div>
+            <div class="project-body">
+              <h3>Loan Prediction System</h3>
+              <p>Predicts loan approval from applicant data. Cleans and encodes the dataset with Pandas, scales features and trains a Random Forest classifier, served through an interactive Streamlit web app.</p>
+              <div class="tags"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>Streamlit</span></div>
+              <div class="project-links">
+                <a href="https://github.com/Indeewari04/loan-prediction-system" target="_blank" rel="noopener">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- MyCourtConnect -->
+          <article class="project-card reveal delay-1" data-category="software">
+            <div class="project-thumb thumb-code">
+              <pre class="mini-code"><span class="k">&lt;?php</span>
+<span class="k">require</span> <span class="s">'auth.php'</span>;
+<span class="f">requireRole</span>(<span class="s">'client'</span>);
+$cases = $db-&gt;<span class="f">query</span>(
+  <span class="s">"SELECT * FROM cases"</span>);</pre>
+              <span class="project-type">Web Application</span>
+            </div>
+            <div class="project-body">
+              <h3>MyCourtConnect</h3>
+              <p>Web platform helping clients in Sri Lanka track court cases and connect with lawyers. Role-based access for admins, clients, lawyers and law students, with appointment booking, court-date reminders, messaging and an internship module.</p>
+              <div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+              <div class="project-links">
+                <a href="https://github.com/Indeewari04/MyCourtConnect" target="_blank" rel="noopener">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- QA Automation -->
+          <article class="project-card reveal delay-2" data-category="qa software">
+            <div class="project-thumb thumb-code alt">
+              <pre class="mini-code"><span class="f">test</span>(<span class="s">'client can log in'</span>,
+  <span class="k">async</span> ({ page }) =&gt; {
+  <span class="k">await</span> page.<span class="f">goto</span>(<span class="s">'/login.php'</span>);
+  <span class="k">await</span> <span class="f">expect</span>(page)
+    .<span class="f">toHaveURL</span>(<span class="s">/dashboard/</span>);
+});</pre>
+              <span class="project-type">QA Automation</span>
+            </div>
+            <div class="project-body">
+              <h3>MyCourtConnect QA Automation</h3>
+              <p>End-to-end automated test suite for MyCourtConnect built with Playwright: 7 spec files covering login, registration, permissions, appointments, cases, client profiles and lawyer search, with HTML test reports.</p>
+              <div class="tags"><span>Playwright</span><span>JavaScript</span><span>E2E Testing</span></div>
+              <div class="project-links">
+                <a href="https://github.com/Indeewari04/mycourtconnect-qa-automation" target="_blank" rel="noopener">GitHub →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Power BI coming soon -->
+        <div class="coming-soon reveal">
+          <div class="cs-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+          </div>
+          <div>
+            <h3>Power BI dashboards — coming soon</h3>
+            <p>I'm currently building interactive Power BI reports using DAX and Power Query. Follow my GitHub to see them as they're published.</p>
+          </div>
+          <a href="https://github.com/Indeewari04" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Follow on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">04 — Journey</span>
+          <h2>Education &amp; <span class="gradient-text">Experience</span></h2>
+        </div>
+        <div class="journey-grid">
+          <div class="timeline-col">
+            <h3 class="col-title reveal"><span>🎓</span> Education</h3>
+            <div class="timeline">
+              <div class="tl-item reveal">
+                <span class="tl-date">Present · 4th Year</span>
+                <h4>BSc (Hons) in Industrial Information Technology</h4>
+                <h5>Uva Wellassa University of Sri Lanka</h5>
+                <p>Focusing on data analytics, business intelligence and software development, with hands-on academic projects in web development, machine learning and QA automation.</p>
+              </div>
+              <div class="tl-item reveal">
+                <span class="tl-date">Next Step</span>
+                <h4>Seeking an Internship</h4>
+                <h5>Data Analytics / Business Intelligence</h5>
+                <p>Looking for an opportunity to apply Power BI, SQL and data-modelling skills to real business problems.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-col">
+            <h3 class="col-title reveal"><span>🚀</span> Hands-on Experience</h3>
+            <div class="timeline">
+              <div class="tl-item reveal">
+                <span class="tl-date">Team Collaboration</span>
+                <h4>Full-Stack Developer (Team Projects)</h4>
+                <h5>Monsoon Ridge · CINEVERSE</h5>
+                <p>Built booking changes, guest reviews, refunds, QR check-in and password-reset features with React, Express, Firebase and Supabase, working through Git branches and pull requests.</p>
+              </div>
+              <div class="tl-item reveal">
+                <span class="tl-date">QA Automation</span>
+                <h4>End-to-End Testing with Playwright</h4>
+                <h5>MyCourtConnect QA Automation</h5>
+                <p>Wrote automated tests for authentication, role-based permissions and core user flows, and documented results with test reports.</p>
+              </div>
+              <div class="tl-item reveal">
+                <span class="tl-date">Full-Stack Web</span>
+                <h4>Academic Web Application</h4>
+                <h5>MyCourtConnect</h5>
+                <p>Built a multi-role PHP &amp; MySQL platform following the Waterfall model, from requirements and design through implementation and testing.</p>
+              </div>
+              <div class="tl-item reveal">
+                <span class="tl-date">Machine Learning</span>
+                <h4>Predictive Modelling</h4>
+                <h5>Loan Prediction System</h5>
+                <p>Prepared and encoded a real dataset, trained a Random Forest classifier and deployed it as a Streamlit app.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">05 — What I Do</span>
+          <h2>Areas of <span class="gradient-text">Focus</span></h2>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card reveal">
+            <div class="cert-icon">📊</div>
+            <h4>Dashboard Design</h4>
+            <span>Interactive Power BI reports with clear KPIs, drill-downs and visuals that tell a story.</span>
+          </div>
+          <div class="cert-card reveal delay-1">
+            <div class="cert-icon">🧹</div>
+            <h4>Data Cleaning &amp; Modelling</h4>
+            <span>Shaping messy data with Power Query and building solid data models for analysis.</span>
+          </div>
+          <div class="cert-card reveal delay-2">
+            <div class="cert-icon">🗄️</div>
+            <h4>SQL &amp; Analysis</h4>
+            <span>Querying relational databases and writing DAX measures to answer business questions.</span>
+          </div>
+          <div class="cert-card reveal delay-3">
+            <div class="cert-icon">🧪</div>
+            <h4>Software &amp; QA</h4>
+            <span>Building web apps and making sure they work with automated end-to-end tests.</span>
+          </div>
+        </div>
+        <blockquote class="quote reveal">
+          “Without data, you're just another person with an opinion.”
+          <cite>— W. Edwards Deming</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-info">
+            <span class="section-tag">06 — Contact</span>
+            <h2>Let's turn data into <span class="gradient-text">insights</span> together</h2>
+            <p>I'm actively looking for an internship in Data Analytics / Business Intelligence. Feel free to reach out!</p>
+            <ul class="contact-list">
+              <li>
+                <span class="ci">✉</span>
+                <div><small>Email</small><a href="mailto:indeewariupamalika04@gmail.com">indeewariupamalika04@gmail.com</a></div>
+              </li>
+              <li>
+                <span class="ci">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+                </span>
+                <div><small>GitHub</small><a href="https://github.com/Indeewari04" target="_blank" rel="noopener">github.com/Indeewari04</a></div>
+              </li>
+              <li>
+                <span class="ci">in</span>
+                <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/indeewari-thennakoon-656957356/" target="_blank" rel="noopener">linkedin.com/in/indeewari-thennakoon</a></div>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <input type="text" id="name" required placeholder=" " />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" required placeholder=" " />
+              <label for="email">Your Email</label>
+            </div>
+            <div class="field">
+              <input type="text" id="subject" placeholder=" " />
+              <label for="subject">Subject</label>
+            </div>
+            <div class="field">
+              <textarea id="message" rows="5" required placeholder=" "></textarea>
+              <label for="message">Message</label>
+            </div>
+            <!-- spam trap: real people never fill this -->
+            <input type="text" name="_honey" id="honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button type="submit" class="btn btn-primary btn-block" id="sendBtn">
+              <span class="btn-label">Send Message ➜</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
+    <img src="" alt="" id="lbImg" />
+    <button class="lb-nav lb-next" aria-label="Next">›</button>
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Indeewari Thennakoon. Crafted with data &amp; code.</p>
+      <a href="#home" class="back-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
