@@ -481,5 +481,19 @@ contactForm.addEventListener("submit", async (e) => {
   }
 });
 
+// ===== Signature: written left-to-right when it scrolls into view (animation is pure CSS) =====
+const sig = document.getElementById("signature");
+if (sig) {
+  const sigObs = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    sigObs.disconnect();
+    const draw = () => sig.classList.add("draw");
+    // wait (max 1.5s) for the script font so the real letters are revealed
+    const font = document.fonts ? document.fonts.load('96px "Great Vibes"') : Promise.resolve();
+    Promise.race([font, new Promise((r) => setTimeout(r, 1500))]).then(draw, draw);
+  }, { threshold: 0.3 });
+  sigObs.observe(sig);
+}
+
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();
